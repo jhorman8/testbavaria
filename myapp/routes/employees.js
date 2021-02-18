@@ -42,4 +42,23 @@ router.post('/updateEmployees', async function(req, res, next) {
 
 });
 
+
+router.delete('/delete', async function (req, res, next) {
+  let data = req.query.id
+  console.log(data);
+  let selectById = await dbcontroller.selectQuery(data, CONSTANTS.EMPLOYEESYID); //List by id
+  if (selectById != null && selectById != false) {
+    let eliminar = await dbcontroller.deleteQuery(data, CONSTANTS.DELETEEMPLOYEES);
+    res.status(200).send({ message: "successful" })
+
+  }
+  else{
+
+    res.status(500).send({ message: "error" })
+
+  }
+  
+
+});
+
 module.exports = router;

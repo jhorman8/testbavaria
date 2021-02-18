@@ -17,6 +17,9 @@ const UPDATETYPES = process.env.UPDATETYPES
     ? process.env.UPDATETYPES
     : config.get("types.update");
 
+const DELETETYPES = process.env.DELETETYPES
+    ? process.env.DELETETYPES
+    : config.get("types.delete");
 
 
 
@@ -35,7 +38,9 @@ const INSERTEMPLOYEES = process.env.INSERTEMPLOYEES
 const UPDATEEMPLOYEES = process.env.UPDATEEMPLOYEES
     ? process.env.UPDATEEMPLOYEES
     : config.get("employees.update");
-
+const DELETEEMPLOYEES = process.env.DELETEEMPLOYEES
+    ? process.env.DELETEEMPLOYEES
+    : config.get("employees.delete");
 
 
 const SELECTCONTRACTS = process.env.SELECTCONTRACTS
@@ -54,6 +59,10 @@ const UPDATECONTRACTS = process.env.UPDATECONTRACTS
     ? process.env.UPDATECONTRACTS
     : config.get("contracts.update");
 
+const DELETECONTRACTS = process.env.DELETECONTRACTS
+    ? process.env.DELETECONTRACTS
+    : config.get("contracts.delete");
+
 
 
 
@@ -69,9 +78,13 @@ const INSERTCHILDRENS = process.env.INSERTCHILDRENS
     ? process.env.INSERTCHILDRENS
     : config.get("childrens.insert");
 
-const UPDATECHILDRENS= process.env.UPDATECHILDRENS
+const UPDATECHILDRENS = process.env.UPDATECHILDRENS
     ? process.env.UPDATECHILDRENS
     : config.get("childrens.update");
+
+const DELETECHILDRENS = process.env.DELETECHILDRENS
+    ? process.env.DELETECHILDRENS
+    : config.get("childrens.delete");
 
 
 module.exports = {
@@ -79,6 +92,7 @@ module.exports = {
     SELECTTYPES,
     INSERTTYPES,
     UPDATETYPES,
+    DELETETYPES,
     SELECTEMPLOYEES,
     EMPLOYEESYID,
     INSERTEMPLOYEES,
@@ -90,6 +104,9 @@ module.exports = {
     INSERTCHILDRENS,
     SELECTCHILDRENS,
     CHILDRENSBYID,
-    UPDATECHILDRENS
+    UPDATECHILDRENS,
+    DELETEEMPLOYEES,
+    DELETECONTRACTS,
+    DELETECHILDRENS
 };
 

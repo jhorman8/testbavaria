@@ -92,25 +92,21 @@ async function updateQuery(data,sql) {
 
 
 
-async function deleteQuery() {
+async function deleteQuery(data,sql) {
   return new Promise(async (resolve) => {
     try {
       let db = new sqlite3.Database('./db/bavariadatabase.db');
-      db.serialize(function () {
 
-        let stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-        for (var i = 0; i < 10; i++) {
-          stmt.run("Ipsum " + i);
+
+      let deletequery = db.run(sql,data, function(err){
+        if (err) {
+          return console.log(err.message);
         }
-        stmt.finalize();
 
-        db.each("SELECT rowid AS id, info FROM lorem", function (err, row) {
-          console.log(row.id + ": " + row.info);
-        });
+        resolve(this.lastID)
+
       });
-
       db.close();
-      resolve(result)
 
     } catch (err) {
       resolve(false)
