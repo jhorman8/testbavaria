@@ -1,0 +1,26 @@
+{
+    "types": {
+        "selectId": "SELECT * FROM types where id = (?)",
+        "select": "SELECT * FROM types",
+        "insert": "INSERT INTO types VALUES (NULL,?)",
+        "update": "UPDATE  types SET name = ? WHERE id = ?"
+    },
+    "employees": {
+        "selectId": "SELECT * FROM employees where id = (?)",
+        "select": "SELECT * FROM employees",
+        "insert": "INSERT INTO employees VALUES (NULL,?,?,?,?)",
+        "update": "UPDATE  employees SET name = ?, phone = ?, address = ?, types_id=? WHERE id = ?"
+    },
+    "contracts": {
+        "selectId": "SELECT * FROM contracts where id = (?)",
+        "select": "SELECT * FROM contracts",
+        "insert": "INSERT INTO contracts VALUES (NULL,?,?,?,?)",
+        "update": "UPDATE  contracts SET name = ?, date = ?, file = ?, employees_id=? WHERE id = ?"
+    },
+    "childrens": {
+        "selectId": "SELECT * FROM childrens where id = (?)",
+        "select": "SELECT * FROM childrens",
+        "insert": "INSERT INTO childrens VALUES (NULL,?,?,?)",
+        "update": "UPDATE  childrens SET name = ?, age = ?, employees_id=? WHERE id = ?"
+    }
+}
